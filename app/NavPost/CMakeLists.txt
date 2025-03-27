@@ -303,9 +303,9 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
     if(WIN32)
         find_program(QT_DEPLOY NAMES windeployqt)
         if (MSVC)
-            file(GLOB_RECURSE RUNTIME_FILE_PATHS ./runtime/msvc/*.dll)
+            file(GLOB_RECURSE RUNTIME_FILE_PATHS ${CMAKE_SOURCE_DIR}/rely/runtime/msvc/*.dll)
         elseif (MINGW)
-            file(GLOB_RECURSE RUNTIME_FILE_PATHS ./runtime/mingw/*.dll)
+            file(GLOB_RECURSE RUNTIME_FILE_PATHS ${CMAKE_SOURCE_DIR}/rely/runtime/mingw/*.dll)
         endif ()
     add_custom_target(${PROJECT_NAME}_dist
         COMMAND ${CMAKE_COMMAND} -E remove_directory ${DIST_PATH}
